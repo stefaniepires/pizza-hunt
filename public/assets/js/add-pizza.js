@@ -62,14 +62,16 @@ const handlePizzaSubmit = event => {
   })
     .then(response => response.json())
     .then(postResponse => {
+      alert('Pizza created successfully!');
       console.log(postResponse);
     })
     .catch(err => {
       console.log(err);
       saveRecord(formData);
-      // DO INDEXED DB STUFF HERE
     });
+    
 };
 
 $pizzaForm.addEventListener('submit', handlePizzaSubmit);
 $addToppingBtn.addEventListener('click', handleAddTopping);
+
